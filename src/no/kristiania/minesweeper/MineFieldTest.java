@@ -60,6 +60,13 @@ public class MineFieldTest {
                 displayMineField(new String[] { "...", ".*.", "..." })
         );
     }
+    @Test
+    void itCountsMinesAroundCell() {
+        assertArrayEquals(
+                new String[] { "***", "*8*", "***" },
+                displayMineField(new String[] { "***", "*.*", "***" })
+        );
+    }
 
     private String[] displayMineField(String[] input) {
         return new MineField(input).displayMineField();
