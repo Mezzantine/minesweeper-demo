@@ -40,6 +40,14 @@ public class MineFieldTest {
         );
     }
 
+    @Test
+    void itShowsHintOnRowOfMine() {
+        assertArrayEquals(
+                new String[] { "01*10" },
+                displayMineField(new String[] { "*.." })
+        );
+    }
+
     private String[] displayMineField(String[] input) {
         return new MineField(input).displayMineField();
     }
