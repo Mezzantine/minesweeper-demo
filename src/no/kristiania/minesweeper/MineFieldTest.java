@@ -16,19 +16,30 @@ public class MineFieldTest {
           displayMineField(new String[] { "...", "...", "..." })
         );
 
-    }@Test
+    }
+    @Test
     void isShowsCorrectNumberOfColumns() {
         assertArrayEquals(
           new String[] { "0000" },
           displayMineField(new String[] { "...." })
         );
     }
+    @Test
+    void itShowsMines() {
+        assertArrayEquals(
+          new String[] { "***" },
+          displayMineField(new String[] { "***" })
+        );
+    }
 
     private String[] displayMineField(String[] input) {
-        //We do the simplest thing that could possibly work! For å få testen til å passere...
         String[] result = new String[input.length];
-        for (int i = 0; i < input.length; i++) {
-            result[i] = "000";
+        for (int row = 0; row < input.length; row++) {
+            String rowString = "";
+            for (int col = 0; col < input[row].length(); col++) {
+                rowString += "0";
+            }
+            result[row] = rowString;
         }
         return result;
     }
