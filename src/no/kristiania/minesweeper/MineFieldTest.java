@@ -6,53 +6,22 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 public class MineFieldTest {
     @Test
-    void itShowsEmptyMinefield() {
-        assertArrayEquals(new String[] { "000", "000" }, displayMineField(new String[] { "...", "..." }));
-    }
-    @Test
-    void isShowsCorrectNumberOfRows() {
+    void itShowsCorrectNumberOfRows() {
         assertArrayEquals(
           new String[] { "000", "000", "000" },
           displayMineField(new String[] { "...", "...", "..." })
         );
 
     }
+
     @Test
-    void isShowsCorrectNumberOfColumns() {
+    void itShowsCorrectNumberOfColumns() {
         assertArrayEquals(
           new String[] { "0000" },
           displayMineField(new String[] { "...." })
         );
     }
-    @Test
-    void itShowsMines() {
-        assertArrayEquals(
-          new String[] { "***" },
-          displayMineField(new String[] { "***" })
-        );
-    }
-    @Test
-    void itShowsHintRightOfMine() {
-        assertArrayEquals(
-                new String[] { "*10" },
-                displayMineField(new String[] { "*.." })
-        );
-    }
-    @Test
-    void itShowsHintOnRowOfMine() {
-        assertArrayEquals(
-                new String[] { "01*10" },
-                displayMineField(new String[] { "..*.." })
-        );
-    }
 
-    @Test
-    void itShowsHintOnColOfMine() {
-        assertArrayEquals(
-                new String[] { "0", "1", "*", "1", "0" },
-                displayMineField(new String[] { ".", ".", "*", ".", "." })
-        );
-    }
     @Test
     void itShowsHintAroundMine() {
         assertArrayEquals(
@@ -60,6 +29,7 @@ public class MineFieldTest {
                 displayMineField(new String[] { "...", ".*.", "..." })
         );
     }
+
     @Test
     void itCountsMinesAroundCell() {
         assertArrayEquals(
